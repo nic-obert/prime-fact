@@ -1,0 +1,6 @@
+__pycache__
+*.pyc
+*.out
+*.o
+*.class
+*.jar
