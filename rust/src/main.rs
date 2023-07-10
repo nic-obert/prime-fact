@@ -2,18 +2,29 @@ use std::env;
 use num_integer::Roots;
 
 
-fn factorize(n: u128) -> Vec<u128> {
+fn factorize(mut n: u128) -> Vec<u128> {
     let mut factors = Vec::new();
-    let mut n = n;
-    let mut i = 2;
+
+    // 2 is the only even prime
+    while n % 2 == 0 {
+        factors.push(2);
+        n /= 2;
+    }
+
+    let mut i = 3;
     while i <= n.sqrt() + 1 {
         if n % i == 0 {
             factors.push(i);
             n /= i;
         } else {
-            i += 1;
+            i += 2;
         }
     }
+
+    if n > 2 {
+        factors.push(n);
+    }
+
     factors
 }
 
