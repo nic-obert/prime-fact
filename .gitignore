@@ -4,3 +4,7 @@ __pycache__
 *.o
 *.class
 *.jar
+
+# Added by cargo
+
+/target
